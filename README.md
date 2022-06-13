@@ -1,3 +1,5 @@
-# Curso Grátis de Git e GitHub
-Material do **Curso de Git e GitHub**, disponível gratiutamente no canal do *Youtube*.
+#  Git e GitHub linguagem Markdown
+Estou aprendendo linguagem **Markdown** no curso de *Git GitHub*.
+
+
 
