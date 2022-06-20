@@ -100,6 +100,10 @@ resource "azurerm_firewall_nat_rule_collection" "dashboard-access" {
 
 * `name` - *public-access* (Obrigatório específica o nome da coleção de Regras NAT que deve ser exclusiva no Firewall).
 * `Azure_firewall _name` - *data.azurerm_firewall.hubfw.name* ( Obrigatório específica o nome do Firewall no qual a coleção de regras deve ser criada).
+* `Resource_group_name` - *data.azurerm_resource_group.rg-hub.name* ( Obrigatório específica o nome do Grupo de Recursos no qual o Firewall existe).
+* `Priority` - *1000* ( Obrigatório específica a prioridade da coleção de regras, os valores possíveis estão entre 100 - 65000).
+* `Action` - *Dnat* ( Obrigatório específica a ação que a regra aplicará ao tráfego correspondente. Os valores possíveis são DNAT e SNAT).
+
 
 
 
