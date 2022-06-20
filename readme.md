@@ -17,11 +17,11 @@ users:
     shell: /bin/bash
 ```
 ### *Referência do argumento*
-`name` - O nome de login do usuário
+* `name` - O nome de login do usuário
 
-`sudo` - ALL=(ALL) NOPASSWD:ALL (permite acesso irrestrito ao sudo de um usuário).
+* `sudo` - *ALL=(ALL) NOPASSWD:ALL* (permite acesso irrestrito ao sudo de um usuário).
 
-`SSH_authorized_keys` - (adicionar chaves ao arquivo de chaves autorizadas do usuário).
+* `SSH_authorized_keys` - (adicionar chaves ao arquivo de chaves autorizadas do usuário).
 ## **Datasource.tf**
 Fontes de dados para acessar as propriedades dos grupo de recursos do Azure.
 
@@ -43,7 +43,7 @@ data "azurerm_resource_group" "rg-monitor" {
 }
 ```
 ### *Referência do argumento*
-`name` - (obrigatório) Específica o nome do grupo de recursos.
+* `name` - (obrigatório) Específica o nome do grupo de recursos.
 
 ## **Datasource da chave ssh a ser usada nas VMs Azure e VMs AWS**
 
