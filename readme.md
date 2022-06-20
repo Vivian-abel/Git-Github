@@ -98,8 +98,8 @@ resource "azurerm_firewall_nat_rule_collection" "dashboard-access" {
 
 ### *Referência do argumento*
 
-* `name` - `public-access` (Obrigatório específica o nome da coleção de Regras NAT que deve ser exclusiva no Firewall).
-* `Azure_firewall _name` - `data.azurerm_firewall.hubfw.name`( Obrigatório específica o nome do Firewall no qual a coleção de regras deve ser criada).
+* `name` - *public-access* (Obrigatório específica o nome da coleção de Regras NAT que deve ser exclusiva no Firewall).
+* `Azure_firewall _name` - *data.azurerm_firewall.hubfw.name* ( Obrigatório específica o nome do Firewall no qual a coleção de regras deve ser criada).
 
 
 
