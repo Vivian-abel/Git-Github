@@ -59,6 +59,48 @@ data "aws_key_pair" "chave_ssh_aws" {
 }
 ```
 
+## **Main.tf**
+O **main.tf** gerencia uma coleção de Regras **NAT** em um Firewall ao Azure para o dashboard-access (acesso ao painel).
+### **Exemplo de uso**
+```
+resource "azurerm_firewall_nat_rule_collection" "dashboard-access" {
+  name                = "public-access"
+  azure_firewall_name = data.azurerm_firewall.hubfw.name
+  resource_group_name = data.azurerm_resource_group.rg-hub.name
+  priority            = 1000
+  action              = "Dnat"
+
+  rule {
+    name = "dashboard"
+
+    source_addresses = [
+      "*",
+    ]
+
+    destination_ports = [
+      "35000"
+    ]
+
+    destination_addresses = [
+      data.azurerm_public_ip.dashboard-pip.ip_address
+    ]
+
+    translated_port = 5000
+
+    translated_address = azurerm_linux_virtual_machine.vm_monitor[0].private_ip_address
+
+    protocols = [
+      "TCP",
+    ]
+  }
+}
+```
+
+### *Referência do argumento*
+
+* `name` - `public-access` (Obrigatório específica o nome da coleção de Regras NAT que deve ser exclusiva no Firewall).
+* `Azure_firewall _name` - `data.azurerm_firewall.hubfw.name`( Obrigatório específica o nome do Firewall no qual a coleção de regras deve ser criada).
+
 
 
 
